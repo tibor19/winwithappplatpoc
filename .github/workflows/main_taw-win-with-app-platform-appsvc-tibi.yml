@@ -17,10 +17,10 @@ env:                                            # <<-- Add environment variables
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run: 
-        working-directory: ${GITHUB_WORKSPACE}/Humongous.Healthcare.Web
+        working-directory: Humongous.Healthcare.Web
 
     steps:
       - uses: actions/checkout@v2
@@ -44,7 +44,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
