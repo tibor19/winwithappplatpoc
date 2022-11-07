@@ -18,6 +18,9 @@ env:                                            # <<-- Add environment variables
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run: 
+        working-directory: ${GITHUB_WORKSPACE}/Humongous.Healthcare.Web
 
     steps:
       - uses: actions/checkout@v2
